@@ -1,29 +1,33 @@
 {
-  "name": "metro-lens",
+  "name": "cdk-workshop",
   "version": "0.1.0",
   "bin": {
-    "metro-lens": "bin/metro-lens.js"
+    "cdk-workshop": "bin/cdk-workshop.js"
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
+    "watch": "tsc -w && cd lambda && npm run watch",
     "test": "jest",
     "cdk": "cdk"
   },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.26.0",
+    "@aws-cdk/aws-dynamodb": "^1.26.0",
+    "@aws-cdk/aws-lambda": "^1.26.0",
+    "@aws-cdk/aws-sns": "1.26.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.26.0",
+    "@aws-cdk/aws-sqs": "1.26.0",
+    "@aws-cdk/core": "1.26.0",
+    "cdk-dynamo-table-viewer": "^3.1.2"
+  },
   "devDependencies": {
-    "aws-cdk": "1.26.0",
     "@aws-cdk/assert": "1.26.0",
     "@types/jest": "^24.0.22",
     "@types/node": "10.17.5",
+    "aws-cdk": "1.26.0",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.7.2"
-  },
-  "dependencies": {
-    "@aws-cdk/aws-sns": "1.26.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.26.0",
-    "@aws-cdk/aws-sqs": "1.26.0",
-    "@aws-cdk/core": "1.26.0"
   }
 }
